@@ -3,6 +3,7 @@ import AppBanner from '@/components/shared/AppBanner';
 import ArticlesGrid from '../components/articles/ArticlesGrid.vue';
 import Button from '../components/reusable/Button.vue';
 
+
 export default {
 	name: 'Home',
 	components: {

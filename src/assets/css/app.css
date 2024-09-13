@@ -7,7 +7,7 @@
 /* Custom Styles Below */
 
 body {
-	font-family: 'GeneralSans-Regular';
+	font-family: 'GeneralSans-Regular', monospace;
 }
 
 /* Theme Colors */
@@ -24,7 +24,7 @@ body {
 }
 
 .font-general-variable {
-	font-family: 'GeneralSans-Variable';
+	font-family: 'GeneralSans-Variable', sans-serif;
 }
 
 @font-face {
@@ -38,7 +38,7 @@ body {
 }
 
 .font-general-variable-italic {
-	font-family: 'GeneralSans-VariableItalic';
+	font-family: 'GeneralSans-VariableItalic', monospace;
 }
 
 @font-face {
@@ -52,7 +52,7 @@ body {
 }
 
 .font-general-extralight {
-	font-family: 'GeneralSans-Extralight';
+	font-family: 'GeneralSans-Extralight', monospace;
 }
 
 @font-face {
@@ -66,7 +66,7 @@ body {
 }
 
 .font-general-extralight-italic {
-	font-family: 'GeneralSans-ExtralightItalic';
+	font-family: 'GeneralSans-ExtralightItalic', monospace;
 }
 
 @font-face {
@@ -80,7 +80,7 @@ body {
 }
 
 .font-general-light {
-	font-family: 'GeneralSans-Light';
+	font-family: 'GeneralSans-Light', monospace;
 }
 
 @font-face {
@@ -94,7 +94,7 @@ body {
 }
 
 .font-general-light-italic {
-	font-family: 'GeneralSans-LightItalic';
+	font-family: 'GeneralSans-LightItalic', serif;
 }
 
 @font-face {
@@ -108,7 +108,12 @@ body {
 }
 
 .font-general-regular {
-	font-family: 'GeneralSans-Regular';
+	font-family: 'GeneralSans-Regular', monospace;
+}
+
+.font-articles {
+	font-family: KacstBook, sans-serif;
+	;
 }
 
 @font-face {
@@ -122,7 +127,7 @@ body {
 }
 
 .font-general-italic {
-	font-family: 'GeneralSans-Italic';
+	font-family: 'GeneralSans-Italic', monospace;
 }
 
 @font-face {
@@ -136,7 +141,7 @@ body {
 }
 
 .font-general-medium {
-	font-family: 'GeneralSans-Medium';
+	font-family: KacstTitle, monospace;
 }
 
 @font-face {
@@ -150,7 +155,7 @@ body {
 }
 
 .font-general-medium-italic {
-	font-family: 'GeneralSans-MediumItalic';
+	font-family: 'GeneralSans-MediumItalic', monospace;
 }
 
 @font-face {
@@ -164,7 +169,7 @@ body {
 }
 
 .font-general-semibold {
-	font-family: 'GeneralSans-Semibold';
+	font-family: 'GeneralSans-Semibold', monospace;
 }
 
 @font-face {
@@ -178,7 +183,7 @@ body {
 }
 
 .font-general-semibold-italic {
-	font-family: 'GeneralSans-SemiboldItalic';
+	font-family: 'GeneralSans-SemiboldItalic', monospace;
 }
 
 @font-face {
@@ -192,7 +197,7 @@ body {
 }
 
 .font-general-bold {
-	font-family: 'GeneralSans-Bold';
+	font-family: 'GeneralSans-Bold', monospace;
 }
 
 @font-face {
@@ -206,7 +211,7 @@ body {
 }
 
 .font-general-bold-italic {
-	font-family: 'GeneralSans-BoldItalic';
+	font-family: 'GeneralSans-BoldItalic', monospace;
 }
 
 /* Active class for navigation menu */
@@ -220,4 +225,8 @@ body {
 	direction: rtl !important;
 	text-align: right;
 	text-orientation: sideways-right  !important;
+}
+
+.bo-info-bar-item {
+	width: 22.4rem;
 }

@@ -4,6 +4,7 @@ import feather from 'feather-icons';
 import Datepicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
 import { ref } from 'vue';
+import {DAFTAR_BACK_BASE_URL} from "../../../config";
 
 export default {
 	components: {Datepicker},
@@ -33,12 +34,12 @@ export default {
 	mounted() {
 		feather.replace();
 		axios
-			.get('http://localhost:8181/v1/tags/bytype/genre')
+			.get(DAFTAR_BACK_BASE_URL + '/v1/tags/bytype/genre')
 			.then(response => {
 				this.selectOptions = response.data;
 			});
 		axios
-			.get('http://localhost:8181/v1/tags/bytype/country')
+			.get(DAFTAR_BACK_BASE_URL + '/v1/tags/bytype/country')
 			.then(response => {
 				this.selectCountries = response.data;
 			});

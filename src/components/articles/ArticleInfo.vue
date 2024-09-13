@@ -22,7 +22,7 @@ export default {
 			<p
 				v-for="articleDetail in articleInfo.articleDetails"
 				:key="articleDetail"
-				class="font-general-regular mb-5 text-lg text-ternary-dark dark:text-ternary-light"
+				class="font-articles mb-5 text-4xl text-ternary-dark dark:text-ternary-light"
 			>
 				{{ articleDetail }}
 			</p>

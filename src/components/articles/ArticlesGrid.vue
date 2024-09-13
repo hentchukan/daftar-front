@@ -3,6 +3,7 @@ import feather from 'feather-icons';
 import ArticlesFilter from './ArticlesFilter.vue';
 import ArticleSingle from './ArticleSingle.vue';
 import axios from 'axios';
+import {DAFTAR_BACK_BASE_URL} from "../../../config";
 
 export default {
 	components: { ArticleSingle, ArticlesFilter },
@@ -36,17 +37,17 @@ export default {
 			this.filter();
 		},
 		// Filter articles by title search
-		filterByTitle(event) {
+		filterByTitle(titleSearch) {
 			// let article = new RegExp(this.searchArticle, 'i');
 			// return this.articles.filter((el) => el.title.match(article));
-			console.log("Filter by Title "+event);
+			console.log("Filter by Title " + titleSearch);
 			this.filters.filmTitle = this.titleSearch;
 			this.filter();
 		},
 		filter() {
 			console.log("Filter "+this.filters);
 			axios
-				.post('http://localhost:8181/v1/articles/overviews', this.filters)
+				.post(DAFTAR_BACK_BASE_URL + '/v1/articles/overviews', this.filters)
 				.then(response => {
 					this.articles = response.data;
 					console.log("Search result: " + this.articles.length + " items");
@@ -56,7 +57,7 @@ export default {
 	mounted() {
 		feather.replace();
 		axios
-			.get('http://localhost:8181/v1/articles/overviews')
+			.get(DAFTAR_BACK_BASE_URL + '/v1/articles/overviews')
 			.then(response => {
 				this.articles = response.data;
 			})
@@ -151,7 +152,7 @@ export default {
 
 		<!-- Articles grid -->
 		<div
-			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-10"
+			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-6 sm:gap-5"
 		>
 			<ArticleSingle
 				v-for="article in articles"
@@ -162,4 +163,6 @@ export default {
 	</section>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>

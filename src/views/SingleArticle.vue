@@ -5,6 +5,7 @@ import ArticleGallery from '../components/articles/ArticleGallery.vue';
 import ArticleInfo from '../components/articles/ArticleInfo.vue';
 import ArticleRelatedArticles from '../components/articles/ArticleRelatedArticles.vue';
 import axios from 'axios';
+import {DAFTAR_BACK_BASE_URL} from "../../config";
 
 export default {
 	name: 'Articles',
@@ -18,10 +19,10 @@ export default {
 	mounted() {
 		feather.replace();
 		axios
-			.get(`http://localhost:8181/v1/articles/${this.paramId}`)
+			.get(DAFTAR_BACK_BASE_URL + `/v1/articles/${this.paramId}`)
 			.then(response => {
 				this.singleArticleHeader = {
-					filmTitle: response.data.filmInfos.title,
+					filmTitle: response.data.filmInfos.title[0],
 					articleDate: response.data.date,
 					articleTags: response.data.tags,
 				};
@@ -29,7 +30,7 @@ export default {
 					{
 						id: 1,
 						title: 'الْمُخْرِجُ',
-						details: response.data.filmInfos.director,
+						details: response.data.filmInfos.directors[0],
 					},
 					{
 						id: 2,

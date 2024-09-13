@@ -26,7 +26,6 @@ export default {
 	<div :class="appTheme" class="pt-0.5">
 		<!-- App header -->
 		<AppHeader />
-
 		<!-- Render active component contents with vue transition -->
 		<transition name="fade" mode="out-in">
 			<router-view :theme="appTheme" />

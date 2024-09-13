@@ -11,15 +11,15 @@ const routes = [
 		},
 	},
 	{
-		path: '/about',
-		name: 'About',
+		path: '/backdoor',
+		name: 'BackDoor',
 		// route level code-splitting
 		// this generates a separate chunk (about.[hash].js) for this route
 		// which is lazy-loaded when the route is visited.
 		component: () =>
-			import(/* webpackChunkName: "about" */ '../views/About.vue'),
+			import(/* webpackChunkName: "backdoor" */ '../views/BackDoor.vue'),
 		meta: {
-			title: 'Daftar - About',
+			title: 'Daftar - BackDoor',
 		},
 	},
 	{
@@ -47,19 +47,7 @@ const routes = [
 		meta: {
 			title: 'Daftar -Single Article',
 		},
-	},
-	{
-		path: '/contact',
-		name: 'Contact',
-		// route level code-splitting
-		// this generates a separate chunk (articles.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () =>
-			import(/* webpackChunkName: "articles" */ '../views/Contact.vue'),
-		meta: {
-			title: 'Daftar - Contact',
-		},
-	},
+	}
 ];
 
 const router = createRouter({
