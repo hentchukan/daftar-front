@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: daftar-front-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "daftar-front-static-address"
+spec:
+  ingressClassName: "gce"
+  rules:
+    - host: www.bluedaftar.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: daftar-front-deployment-service
+                port:
+                  number: 80
