@@ -42,10 +42,11 @@ jobs:
         with:
           credentials_json: '${{secrets.GCP_SA_KEY}}'
 
-      - name: Debug Service Account
+      - name: Debug Authentication
         run: |
           gcloud auth list
-          gcloud config list
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$GOOGLE_APPLICATION_CREDENTIALS"
+          ls -lah $GOOGLE_APPLICATION_CREDENTIALS || echo "File not found!"
 
       - name: Configure gcloud
         run: |
