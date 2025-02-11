@@ -44,13 +44,11 @@ jobs:
 
       - name: Manually Set Credentials Path
         run: |
-          echo "GOOGLE_APPLICATION_CREDENTIALS=${{ steps.auth.outputs.credentials_file_path }}" >> $GITHUB_ENV
-          echo "CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE=${{ steps.auth.outputs.credentials_file_path }}" >> $GITHUB_ENV
-
-      - name: Manually Activate Service Account
-        run: |
-          gcloud auth activate-service-account --key-file=${{ steps.auth.outputs.credentials_file_path }}
+          gcloud auth activate-service-account --key-file=$GOOGLE_GHA_CREDS_PATH
           gcloud auth list
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: $GOOGLE_GHA_CREDS_PATH
+          CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE: $GOOGLE_GHA_CREDS_PATH
 
       - name: Debug Authentication
         run: |
