@@ -1,3 +1,7 @@
+# Set environment variable for Vue during build time
+ARG VUE_APP_BASE_URL
+ENV VUE_APP_BASE_URL=$VUE_APP_BASE_URL
+
 FROM node:latest as build-stage
 WORKDIR /app
 COPY package*.json ./
