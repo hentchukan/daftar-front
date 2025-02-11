@@ -1,1 +1,1 @@
-export const DAFTAR_BACK_BASE_URL = 'http://34.132.11.29';
+export const DAFTAR_BACK_BASE_URL = process.env.VUE_APP_BASE_URL;
