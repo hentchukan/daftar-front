@@ -63,7 +63,7 @@ jobs:
 
       - name: Build and Tag Docker Image
         run: |
-          docker build -t ${{ secrets.GAR_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/daftar-images/daftar-front:$APP_VERSION -f Dockerfile .
+          docker build --build-arg VUE_APP_BASE_URL=${{ secrets.DAFTAR_BACK_URL }} -t ${{ secrets.GAR_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/daftar-images/daftar-front:$APP_VERSION -f Dockerfile .
           docker tag "${{ secrets.GAR_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/daftar-images/daftar-front:$APP_VERSION" \
                      "${{ secrets.GAR_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/daftar-images/daftar-front:latest"
 
@@ -79,7 +79,6 @@ jobs:
             --platform managed \
             --region ${{ secrets.GAR_REGION }} \
             --allow-unauthenticated \
-            --set-env-vars=VUE_APP_BASE_URL=${{ secrets.DAFTAR_BACK_URL }} \
             --memory=512Mi \
             --cpu=1 \
             --port=80
