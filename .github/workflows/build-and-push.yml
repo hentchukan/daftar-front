@@ -42,6 +42,16 @@ jobs:
         with:
           credentials_json: '${{secrets.GCP_SA_KEY}}'
 
+      - name: Manually Set Credentials Path
+        run: |
+          echo "GOOGLE_APPLICATION_CREDENTIALS=${{ steps.auth.outputs.credentials_file_path }}" >> $GITHUB_ENV
+          echo "CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE=${{ steps.auth.outputs.credentials_file_path }}" >> $GITHUB_ENV
+
+      - name: Manually Activate Service Account
+        run: |
+          gcloud auth activate-service-account --key-file=${{ steps.auth.outputs.credentials_file_path }}
+          gcloud auth list
+
       - name: Debug Authentication
         run: |
           gcloud auth list
