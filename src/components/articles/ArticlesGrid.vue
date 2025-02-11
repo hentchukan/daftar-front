@@ -55,6 +55,7 @@ export default {
 		}
 	},
 	mounted() {
+    console.log("URL " + DAFTAR_BACK_BASE_URL);
 		feather.replace();
 		axios
 			.get(DAFTAR_BACK_BASE_URL + '/v1/articles/overviews')
