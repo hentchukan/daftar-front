@@ -61,6 +61,9 @@ jobs:
           gcloud auth configure-docker ${{ secrets.GAR_REGION }}-docker.pkg.dev
           gcloud config set project ${{ secrets.GCP_PROJECT_ID }}
 
+      - name: Print base URL
+        run: echo "VUE_APP_BASE_URL is ${{ secrets.DAFTAR_BACK_URL }}"
+
       - name: Build and Tag Docker Image
         run: |
           docker build --build-arg VUE_APP_BASE_URL=${{ secrets.DAFTAR_BACK_URL }} -t ${{ secrets.GAR_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/daftar-images/daftar-front:$APP_VERSION -f Dockerfile .
