@@ -1,10 +1,3 @@
-# Set environment variable for Vue during build time
-ARG VUE_APP_BASE_URL
-ENV VUE_APP_BASE_URL=$VUE_APP_BASE_URL
-
-# Debug the build process to check if the ARG is set correctly
-RUN echo "VUE_APP_BASE_URL is set to $VUE_APP_BASE_URL"
-
 FROM node:latest as build-stage
 WORKDIR /app
 COPY package*.json ./
