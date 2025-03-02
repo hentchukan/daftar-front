@@ -10,12 +10,25 @@ import BackToTop from 'vue-backtotop';
 const feather = require('feather-icons');
 feather.replace();
 
-createApp(App)
-	.use(router)
+const app = createApp(App);
+
+app.config.globalProperties.$formatDate = (dateString) => {
+    if (!dateString) return "";
+
+    const date = new Date(dateString);
+    const day = date.getDate(); // Extracts the day (30)
+    const year = date.getFullYear(); // Extracts the year (2022)
+
+    // Get the month name in Arabic
+    const month = new Intl.DateTimeFormat("ar-LB", { month: "long" }).format(date);
+
+    return [year,  month, day]; // Ensure correct order: "30 مايو 2022"
+};
+
+app.use(router)
 	.use(BackToTop)
 	.use( CKEditor )
 	.mount('#app');
-
 
 const appTheme = localStorage.getItem('theme');
 

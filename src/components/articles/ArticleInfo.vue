@@ -15,8 +15,7 @@ export default {
 		<!-- Single article right section details -->
 		<div class="w-full sm:w-2/3 text-left mt-10 sm:mt-0 rtf">
 			<p
-				class="font-general-medium text-primary-dark dark:text-primary-light text-2xl font-bold mb-7"
-			>
+				class="font-general-medium text-primary-dark dark:text-primary-light text-2xl font-bold mb-7">
 				{{ articleInfo.articleDetailsHeading }}
 			</p>
 			<p
@@ -30,7 +29,8 @@ export default {
 		
 		<!-- Single article left section details -->
 		<div class="w-full sm:w-1/3 text-left">
-			<!-- Single Article film details -->
+
+      <!-- Single Article film details -->
 			<div class="mb-7">
 				<p
 					class="font-general-medium text-2xl text-secondary-dark dark:text-secondary-light mb-2 rtf"

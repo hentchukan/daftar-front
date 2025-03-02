@@ -1,12 +1,12 @@
 <script>
 import feather from 'feather-icons';
 import ArticlesFilter from './ArticlesFilter.vue';
-import ArticleSingle from './ArticleSingle.vue';
+import ArticleCard from './ArticleCard.vue';
 import axios from 'axios';
 import {DAFTAR_BACK_BASE_URL} from "../../../config";
 
 export default {
-	components: { ArticleSingle, ArticlesFilter },
+	components: { ArticleSingle: ArticleCard, ArticlesFilter },
 	
 	data: () => {
 		return {

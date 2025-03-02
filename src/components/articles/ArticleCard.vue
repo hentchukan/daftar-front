@@ -24,9 +24,9 @@ export default {
         {{ article.title }}
       </p>
       <span
-          class="font-general-medium text-lg text-ternary-dark dark:text-ternary-light"
-      >{{ article.film }}</span
-      >
+          class="font-general-medium text-lg text-ternary-dark dark:text-ternary-light">
+        {{ article.film }}
+      </span>
     </div>
   </router-link>
 </template>
@@ -37,6 +37,4 @@ export default {
     max-width: 20rem;
     width: 100%;
   }
-
-
 </style>

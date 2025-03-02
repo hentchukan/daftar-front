@@ -25,6 +25,7 @@ export default {
 					filmTitle: response.data.filmInfos.title[0],
 					articleDate: response.data.date,
 					articleTags: response.data.tags,
+          ratingDetails: response.data.rating
 				};
 				this.articleInfo.filmInfos = [
 					{
