@@ -41,7 +41,7 @@ export default {
 					{
 						id: 3,
 						title: 'الْبُطُولَةُ',
-						details: response.data.filmInfos.stars.join(', '),
+						details: response.data.filmInfos.stars?.join(', ') ?? '',
 					}
 				];
 				this.articleInfo.summaryDetails = response.data.summary;
