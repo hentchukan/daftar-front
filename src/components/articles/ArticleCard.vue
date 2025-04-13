@@ -10,21 +10,21 @@ export default {
       class="rounded-xl shadow-lg hover:shadow-xl cursor-pointer mb-10 sm:mb-0 bg-secondary-light dark:bg-ternary-dark"
       aria-label="Single Article"
   >
-    <div>
+    <div class="aspect-w-4 aspect-h-2 sm:aspect-w-4 sm:aspect-h-3 lg:aspect-w-16 lg:aspect-h-9">
       <img
           :src="article.img"
           :alt="article.title"
-          class="rounded-t-xl object-scale-down h-140 w-100 border-none"
+          class="object-contain w-full h-full rounded-t-xl"
       />
     </div>
     <div class="text-center px-4 py-6">
       <p
-          class="font-general-semibold text-xl text-ternary-dark dark:text-ternary-light font-semibold mb-2"
+          class="text-base sm:text-xl text-ternary-dark dark:text-ternary-light font-semibold mb-1"
       >
         {{ article.title }}
       </p>
       <span
-          class="font-general-medium text-lg text-ternary-dark dark:text-ternary-light">
+          class="text-sm sm:text-lg text-ternary-dark dark:text-ternary-light">
         {{ article.film }}
       </span>
     </div>
