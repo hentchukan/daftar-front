@@ -153,12 +153,13 @@ export default {
 
 		<!-- Articles grid -->
 		<div
-			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-6 sm:gap-5"
+			class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-4 mt-6 gap-1 sm:gap-3"
 		>
 			<ArticleSingle
 				v-for="article in articles"
 				:key="article.id"
 				:article="article"
+        class="w-full max-w-[130px] sm:max-w-full mx-auto"
 			/>
 		</div>
 	</section>
