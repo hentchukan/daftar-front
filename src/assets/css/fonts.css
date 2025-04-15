@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'ArabicText';
+    src: url('../fonts/rewaii-regular.ttf') format('truetype');
+    font-weight: auto;
+    font-style: auto;
+}
+
+@font-face {
+    font-family: 'ArticleTitleFont';
+    src: url('../fonts/header-journal-regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: auto;
+}
+
+@font-face {
+    font-family: 'FilmTitleFont';
+    src: url('../fonts/kufi-colorful-regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'FilmMetaFont';
+    src: url('../fonts/ruqaa-bold-regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'FilmMetaHeader';
+    src: url('../fonts/ruqaa-bold-regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DaftarTitle';
+    src: url('../fonts/kufi-maghrebi-regular.ttf') format('truetype');
+}

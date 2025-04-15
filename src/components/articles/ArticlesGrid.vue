@@ -70,7 +70,7 @@ export default {
 	<!-- Articles grid -->
 	<section class="pt-10 sm:pt-14">
 		<!-- Articles grid title -->
-		<div class="text-center">
+		<div class="text-center hidden">
 			<p
 				class="font-general-semibold text-2xl sm:text-5xl font-semibold mb-2 text-ternary-dark dark:text-ternary-light"
 			>
@@ -81,15 +81,14 @@ export default {
 		<!-- Filter and search articles -->
 		<div class="mt-10 sm:mt-10">
 			<h3
-				class="font-general-regular
+				class="base-font
 					text-center text-secondary-dark
 					dark:text-ternary-light
 					text-md
 					sm:text-xl
 					font-normal
 					mb-4
-				"
-			>
+				">
 				اِبحث عن فِلمٍ باسمه أو بإحدى سماتِه
 			</h3>
 			<div
