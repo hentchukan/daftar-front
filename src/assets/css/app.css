@@ -157,7 +157,9 @@ body {
 .film-info-header-font {
     font-family: FilmMetaHeader, monospace;
 }
-.film-info-font {}
+.film-info-font {
+    font-family: ArabicText, monospace;
+}
 .daftar-title {
     font-family: DaftarTitle, monospace;
 }
