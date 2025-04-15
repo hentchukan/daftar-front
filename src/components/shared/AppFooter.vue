@@ -36,12 +36,8 @@ export default {
 			class="pt-20 sm:pt-30 pb-8 mt-20 border-t-2 border-primary-light dark:border-secondary-dark"
 		>
 			<!-- Footer social links -->
-			<div
-				class="flex flex-col justify-center items-center mb-12 sm:mb-20"
-			>
-				<p
-					class="font-general-semibold text-3xl sm:text-4xl font-semibold text-primary-dark dark:text-primary-light mb-5"
-				>
+			<div class="flex flex-col justify-center items-center mb-12 sm:mb-20">
+				<p class="film-info-header-font text-3xl sm:text-4xl font-semibold text-primary-dark dark:text-primary-light mb-5">
 					تابعني
 				</p>
 				<ul class="flex gap-4 sm:gap-8">

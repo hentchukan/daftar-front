@@ -32,7 +32,7 @@ export default {
     <div>
        <button
                @click="showInfo = !showInfo"
-               class="sm:hidden inline-flex items-center justify-center gap-2 px-4 py-2 mb-4 text-sm font-medium
+               class="film-info-header-font sm:hidden inline-flex items-center justify-center gap-2 px-4 py-2 mb-4 text-sm font-medium
              text-white bg-primary-dark dark:bg-primary-light dark:text-primary-dark
              rounded-lg shadow hover:bg-primary hover:dark:bg-primary-light/90
              transition-all duration-300 "
@@ -59,7 +59,7 @@ export default {
          >
            <path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" />
          </svg>
-         <span>{{ showInfo ? 'عن الفلمِ' : 'عن الفِلمِ' }}</span>
+         <span >{{ showInfo ? 'عن الفلمِ' : 'عن الفِلمِ' }}</span>
        </button>
    </div>
    </div>
@@ -68,13 +68,13 @@ export default {
 		<!-- Single article right section details -->
 		<div class="w-full sm:w-2/3 text-left rtf">
 			<p
-				class="font-general-medium text-primary-dark dark:text-primary-light text-2xl font-bold mb-7">
+				class="article-title-font text-primary-dark dark:text-primary-light text-2xl font-bold mb-7">
 				{{ articleInfo.articleDetailsHeading }}
 			</p>
 			<p
 				v-for="articleDetail in articleInfo.articleDetails"
 				:key="articleDetail"
-				class="font-articles mb-5 text-4xl text-ternary-dark dark:text-ternary-light" :style="{ fontSize: fontSize + 'px' }"
+				class="base-font mb-5 text-4xl text-ternary-dark dark:text-ternary-light" :style="{ fontSize: fontSize + 'px' }"
 			>
 				{{ articleDetail }}
 			</p>
@@ -84,7 +84,7 @@ export default {
       <!-- Single Article film details -->
 			<div class="mb-7">
 				<p
-					class="font-general-medium text-2xl text-secondary-dark dark:text-secondary-light mb-2 rtf"
+					class="film-info-header-font text-2xl text-secondary-dark dark:text-secondary-light mb-2 rtf"
 				>
 					{{ articleInfo.filmHeading }}
 				</p>
@@ -92,7 +92,7 @@ export default {
 					<li
 						v-for="info in articleInfo.filmInfos"
 						:key="info"
-						class="font-general-regular text-ternary-dark dark:text-ternary-light rtf"
+						class="film-info-font text-ternary-dark dark:text-ternary-light rtf"
 					>
 						<span>{{ info.title }}: </span>
 						<span class="font-general-regular text-primary-dark dark:text-ternary-light rtf">
@@ -105,12 +105,12 @@ export default {
 			<!-- Single Article film summary -->
 			<div class="mb-7">
 				<p
-					class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2 rtf"
+					class="film-info-header-font text-2xl text-ternary-dark dark:text-ternary-light mb-2 rtf"
 				>
 					{{ articleInfo.summaryHeading }}
 				</p>
 				<p
-					class="font-general-regular text-primary-dark dark:text-ternary-light rtf"
+					class="film-info-font text-primary-dark dark:text-ternary-light rtf"
 				>
 					{{ articleInfo.summaryDetails }}
 				</p>
@@ -119,12 +119,12 @@ export default {
 			<!-- Single Article tags -->
 			<div class="mb-7">
 				<p
-					class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2 rtf"
+					class="film-info-header-font text-2xl text-ternary-dark dark:text-ternary-light mb-2 rtf"
 				>
 					{{ articleInfo.tagsHeading }}
 				</p>
 				<p
-					class="font-general-regular text-primary-dark dark:text-ternary-light rtf"
+					class="film-info-font text-primary-dark dark:text-ternary-light rtf"
 				>
 					{{ articleInfo.tagsDetails.join(', ') }}
 				</p>
@@ -132,7 +132,7 @@ export default {
 
 			<!-- Single article social sharing -->
 			<div>
-				<p class="font-general-medium text-2xl text-ternary-dark dark:text-ternary-light mb-2 rtf">
+				<p class="film-info-header-font text-2xl text-ternary-dark dark:text-ternary-light mb-2 rtf">
 					{{ articleInfo.socialSharingsHeading }}
 				</p>
 				<div class="flex justify-center gap-3 mt-5">

@@ -19,12 +19,12 @@ export default {
     </div>
     <div class="text-center px-4 py-6">
       <p
-          class="text-base sm:text-xl text-ternary-dark dark:text-ternary-light font-semibold mb-1"
+          class="film-meta-font sm:text-xl text-ternary-dark dark:text-ternary-light mb-1"
       >
         {{ article.title }}
       </p>
       <span
-          class="text-sm sm:text-lg text-ternary-dark dark:text-ternary-light">
+          class="base-font text-sm sm:text-lg text-ternary-dark dark:text-ternary-light">
         {{ article.film }}
       </span>
     </div>

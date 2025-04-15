@@ -111,9 +111,8 @@ body {
 	font-family: 'GeneralSans-Regular', monospace;
 }
 
-.font-articles {
-	font-family: KacstBook, sans-serif;
-	;
+.base-font {
+	font-family: 'ArabicText', sans-serif;
 }
 
 @font-face {
@@ -141,7 +140,28 @@ body {
 }
 
 .font-general-medium {
-	font-family: KacstTitle, monospace;
+	font-family: ArabicText, monospace;
+}
+
+.film-title-font {
+    font-family: FilmTitleFont, monospace;
+    font-size: 30px;
+}
+.film-meta-font {
+    font-family: FilmMetaFont, sans-serif;
+}
+.article-title-font {
+    font-family: ArticleTitleFont, monospace;
+    font-size: xx-large;
+}
+.film-info-header-font {
+    font-family: FilmMetaHeader, monospace;
+}
+.film-info-font {
+    font-family: ArabicText, monospace;
+}
+.daftar-title {
+    font-family: DaftarTitle, monospace;
 }
 
 @font-face {

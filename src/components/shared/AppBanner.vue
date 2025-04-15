@@ -41,11 +41,11 @@ export default {
 		</div>
 
 		<!-- Banner left contents -->
-		<div class="w-full md:w-2/5 text-left" float-left>
+		<div class="w-full mt-4 md:w-2/5 text-left" float-left>
 			<h1
-				class="font-general-semibold text-5xl md:text-5xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase"
+				class="daftar-title text-5xl md:text-8xl xl:text-8xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase"
 			>
-				الدّفتر الأزرق
+				الـدّفتـــر الأزرق
 			</h1>
 			<p
 				class="font-general-medium mt-2 text-lg sm:text-xl  xl:text-2xl text-center sm:text-left leading-none text-gray-400"
