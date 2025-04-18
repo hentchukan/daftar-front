@@ -11,15 +11,15 @@ const routes = [
 		},
 	},
 	{
-		path: '/backdoor',
-		name: 'BackDoor',
+		path: '/aboutus',
+		name: 'AboutUs',
 		// route level code-splitting
 		// this generates a separate chunk (about.[hash].js) for this route
 		// which is lazy-loaded when the route is visited.
 		component: () =>
-			import(/* webpackChunkName: "backdoor" */ '../views/BackDoor.vue'),
+			import(/* webpackChunkName: "backdoor" */ '../views/AboutUs.vue'),
 		meta: {
-			title: 'Daftar - BackDoor',
+			title: 'Daftar - About Us',
 		},
 	},
 	{
