@@ -13,7 +13,6 @@ export default {
 			articles : [],
 			articlesHeading: 'المقالات',
 			selectedCategory: '',
-			titleSearch: '',
 			filters: {},
 			from: 1900,
 			to: 2022
@@ -36,14 +35,16 @@ export default {
 			this.filters.country = country;
 			this.filter();
 		},
-		// Filter articles by title search
-		filterByTitle(titleSearch) {
-			// let article = new RegExp(this.searchArticle, 'i');
-			// return this.articles.filter((el) => el.title.match(article));
-			console.log("Filter by Title " + titleSearch);
-			this.filters.filmTitle = this.titleSearch;
-			this.filter();
-		},
+    filterByDirector(director) {
+      console.log("Filter by Director "+director);
+      this.filters.director = director;
+      this.filter();
+    },
+    filterByRating(rating) {
+      console.log("Filter by Ratings "+rating);
+      this.filters.rating = rating;
+      this.filter();
+    },
 		filter() {
 			console.log("Filter "+this.filters);
 			axios
@@ -79,77 +80,14 @@ export default {
 		</div>
 
 		<!-- Filter and search articles -->
-		<div class="mt-10 sm:mt-10">
-			<h3
-				class="base-font
-					text-center text-secondary-dark
-					dark:text-ternary-light
-					text-md
-					sm:text-xl
-					font-normal
-					mb-4
-				">
-				اِبحث عن فِلمٍ باسمه أو بإحدى سماتِه
-			</h3>
-			<div
-				class="
-					flex
-					justify-between
-					border-b border-primary-light
-					dark:border-secondary-dark
-					pb-3
-					gap-2
-				"
-			>
-				<div class="flex justify-between gap-2">
-					<span
-						class="
-							hidden
-							sm:block
-							bg-primary-light
-							dark:bg-ternary-dark
-							p-2.5
-							shadow-sm
-							rounded-xl
-							cursor-pointer
-							">
-						<i data-feather="search" 
-							class="text-ternary-dark dark:text-ternary-light"
-							@click="filterByTitle"></i>
-					</span>
-					<input
-						v-model="titleSearch"
-						class="font-general-medium
-						pl-3
-						pr-1
-						sm:px-4
-						py-2
-						rtf
-						border-1 border-gray-200
-						dark:border-secondary-dark
-						rounded-lg
-						text-sm
-						sm:text-md
-						bg-secondary-light
-						dark:bg-ternary-dark
-						text-primary-dark
-						dark:text-ternary-light
-						"
-						id="name"
-						name="name"
-						type="search"
-						required=""
-						placeholder="عنوانُ الفِلمِ"
-						aria-label="Name" 
-						@keyup.enter="this.filterByTitle()"
-					/>
-				</div>
+
 				<ArticlesFilter 
 					@filterCategory="this.filterByCategory($event)" 
 					@filterYear="this.filterByYear($event)" 
-					@filterCountry="this.filterByCountry($event)" />
-			</div>
-		</div>
+					@filterCountry="this.filterByCountry($event)"
+        @filterDirectors="this.filterByDirector($event)"
+        @filterRating="this.filterByRating($event)"/>
+
 
 		<!-- Articles grid -->
 		<div
