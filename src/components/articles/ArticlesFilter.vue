@@ -66,13 +66,14 @@ export default {
 			:name="select"
 			:id="select"
 			class="font-general-medium
-				px-4
+				px-8
 				py-2
 				border-1 border-gray-200
 				dark:border-secondary-dark
 				rounded-lg
 				text-sm
 				sm:text-md
+				rtf
 				bg-secondary-light
 				dark:bg-ternary-dark
 				text-primary-dark
@@ -89,18 +90,18 @@ export default {
 				{{ option.label }}
 			</option>
 		</select>
-
 		<select
 			@change="$emit('filterCountry', $event.target.value)"
 			:name="select"
 			:id="select"
-			class="font-general-medium
-				px-4
+			class="base-font
+				px-8
 				py-2
 				border-1 border-gray-200
 				dark:border-secondary-dark
 				rounded-lg
 				text-sm
+				rtf
 				sm:text-md
 				bg-secondary-light
 				dark:bg-ternary-dark
