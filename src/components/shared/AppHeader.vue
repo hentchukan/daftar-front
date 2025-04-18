@@ -77,13 +77,9 @@ export default {
 <template>
 	<nav id="nav" class="sm:container sm:mx-auto">
 		<!-- Header start -->
-		<div
-			class="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center my-6"
-		>
+		<div class="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center my-6">
 			<!-- Header right section buttons -->
-			<div 
-				class="hidden sm:flex justify-between items-center flex-col md:flex-row"
-			>
+			<div class="hidden sm:flex justify-between items-center flex-col md:flex-row">
 				<!-- Hire me button -->
 				<div style="display: none;" class="hidden md:block">
 					<Button
@@ -139,25 +135,29 @@ export default {
 						class="focus:outline-none"
 						aria-label="Hamburger Menu"
 					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
+						<svg xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
 							class="h-7 w-7 fill-current text-secondary-dark dark:text-ternary-light"
-						>
+            >
 							<path
 								v-if="isOpen"
 								fill-rule="evenodd"
 								d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
-								clip-rule="evenodd"
-							></path>
+								clip-rule="evenodd">
+              </path>
 							<path
-								v-if="!isOpen"
+								v-else
 								fill-rule="evenodd"
 								d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
 							></path>
 						</svg>
 					</button>
-				</div>
+
+          <div v-if="isOpen" class="sm:hidden bg-white dark:bg-gray-800 p-4 shadow-lg">
+            <AppHeaderLinks :showModal="showModal" :isOpen="isOpen" />
+          </div>
+
+        </div>
 			</div>
 		</div>
 
