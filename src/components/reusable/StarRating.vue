@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     defineClass(star) {
-      return ["star", star <= this.rating ? "filled" : (star - this.rating === 0.5 ? "half" : "empty")];
+      return ["text-xl sm:text-2xl lg:text-3xl ", star <= this.rating ? "filled" : (star - this.rating === 0.5 ? "half" : "empty")];
     },
   }
 };
@@ -31,9 +31,7 @@ export default {
   vertical-align: middle; /* Aligns with surrounding text */
   margin-top: -10px; /* Adjust this value as needed */
 }
-.star {
-  font-size: 36px;
-}
+
 .filled {
   color: gold;
 }
