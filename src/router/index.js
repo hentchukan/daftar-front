@@ -22,6 +22,18 @@ const routes = [
 			title: 'Daftar - About Us',
 		},
 	},
+    {
+        path: '/ratingsystem',
+        name: 'RatingSystem',
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () =>
+                import(/* webpackChunkName: "backdoor" */ '../views/RatingSystem.vue'),
+        meta: {
+            title: 'Daftar - Rating System',
+        },
+    },
 	{
 		path: '/articles',
 		name: 'Articles',

@@ -90,9 +90,7 @@ export default {
 
 
 		<!-- Articles grid -->
-		<div
-			class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-4 mt-6 gap-1 sm:gap-3"
-		>
+		<div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-4 mt-6 gap-1 sm:gap-3">
 			<ArticleSingle
 				v-for="article in articles"
 				:key="article.id"
