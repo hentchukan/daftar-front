@@ -83,13 +83,7 @@ export default {
 						name: 'Facebook',
 						icon: 'facebook',
 						url: 'https://facebook.com/bluenotemoviereviews',
-					},
-					{
-						id: 5,
-						name: 'Youtube',
-						icon: 'youtube',
-						url: 'https://www.youtube.com/user/IoriYagamiOroche',
-					},
+					}
 				],
 			},
 			relatedArticles: {

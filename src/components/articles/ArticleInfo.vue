@@ -12,6 +12,24 @@ export default {
 	updated() {
 		feather.replace();
 	},
+  methods: {
+    generateShareUrl(platform) {
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent(this.articleInfo.title || 'Check this out');
+
+      switch (platform) {
+        case 'Twitter':
+          return `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+        case 'Facebook':
+          return `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        case 'Instagram':
+          // Instagram does not support direct web sharing
+          return 'https://www.instagram.com/';
+        default:
+          return '#';
+      }
+    },
+},
 };
 </script>
 
@@ -139,9 +157,9 @@ export default {
 					<a
 						v-for="social in articleInfo.socialSharings"
 						:key="social.id"
-						:href="social.url"
+						:href="generateShareUrl(social.name)"
 						target="__blank"
-						aria-label="Share Project"
+						aria-label="Share Article"
 						class="bg-ternary-light dark:bg-ternary-dark text-gray-400 hover:text-primary-dark dark:hover:text-primary-light p-2 rounded-lg shadow-sm duration-500">
             <i
 							:data-feather="social.icon"
