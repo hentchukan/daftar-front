@@ -23,9 +23,7 @@ export default {
 </script>
 
 <template>
-	<section
-		class="flex flex-col sm:justify-between items-center sm:flex-row mt-12 sm:mt-10"
-	>
+	<section class="flex flex-col sm:justify-between items-center sm:flex-row mt-12 sm:mt-10">
 		<!-- Banner right illustration -->
 		<div class="w-full md:w-2/5 text-right">
 			<img
@@ -41,10 +39,8 @@ export default {
 		</div>
 
 		<!-- Banner left contents -->
-		<div class="w-full mt-4 md:w-2/5 text-left" float-left>
-			<h1
-				class="daftar-title text-5xl md:text-8xl xl:text-8xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase"
-			>
+		<div class="w-full mt-4 md:w-2/5 text-left">
+			<h1 class="daftar-title text-5xl md:text-8xl xl:text-8xl text-center sm:text-left whitespace-nowrap text-ternary-dark dark:text-primary-light uppercase">
 				الـدّفتـــر الأزرق
 			</h1>
 			<p

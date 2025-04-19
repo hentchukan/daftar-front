@@ -22,12 +22,12 @@ export default {
       aria-label="عن الدّفتر اﻷزرق"
       >عن الدّفتر اﻷزرق</router-link
     >
-<!--    <router-link
-      to="/contact"
+    <router-link
+      to="/ratingsystem"
       class="font-general-medium block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-indigo-600 dark:hover:text-indigo-300  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
-      aria-label="للتواصل"
-      >للتواصل</router-link
-    >-->
+      aria-label="عن منطق التقييم"
+      >عن منطق التقييم</router-link
+    >
 		
 		<div style="display: none;"
 			class="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark"

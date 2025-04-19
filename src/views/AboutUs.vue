@@ -1,50 +1,60 @@
 <template>
-  <div class="max-w-3xl mx-auto px-4 py-10 text-primary-dark dark:text-ternary-light rtf">
-    <!-- Presentation paragraph -->
-    <h1 class="text-3xl font-bold article-title-font mb-4 text-center">ملاحظاتٌ بخصوص التّقديراتِ الشخصيّةِ</h1>
-    <p class="mb-10 leading-loose text-lg text-justify base-font">
-      ليس التقديرات الشخصية عملاً تقييميّا حقيقيا، وإنما هو مؤشّر رقميّ يسهّل على المستعمل التعامل مع قاعدة القراءات والمقالات النقدية.
-      وإني على بيّنةٍ من أثرها الاختزاليِّ على القراءة النقدية التي تبحث في فهم العمل الفنيِّ وتُجلي عن مناقبه ومثالبه.
-      ولكن، من قال إنّ المرء لا يحتاج أحيانا إلى الاختزال؟
-    </p>
-
-    <!-- Ratings explanation -->
-    <div class="space-y-6">
-      <div
-              v-for="(description, index) in ratingDescriptions"
-              :key="index"
-              class="flex flex-col sm:flex-row items-center gap-4 bg-secondary-light dark:bg-ternary-dark p-4 rounded-xl shadow-sm"
-      >
-        <StarRating :rating="description.value" class="text-2xl sm:text-3xl" />
-        <p class="base-font text-2xl text-center sm:text-right sm:flex-1">{{ description.text }}</p>
+  <div class="container mx-auto">
+    <section class="flex flex-col sm:justify-center items-center sm:flex-row mt-12 sm:mt-10">
+    <!-- Banner right illustration -->
+      <div class="w-full md:w-2/5 text-right hidden sm:block sm:mr-20">
+        <img
+                v-if="theme === 'light'"
+                src="@/assets/images/bluenotebook.png"
+                alt="Developer"
+        />
+        <img
+                v-else
+                src="@/assets/images/bluenotebook-darktheme.png"
+                alt="Developer"
+        />
       </div>
-    </div>
+
+      <!-- Banner left contents -->
+      <div class="w-full mt-4 md:w-2/5 text-left">
+        <h1 class="daftar-title text-5xl md:text-8xl xl:text-8xl text-center sm:text-right whitespace-nowrap text-ternary-dark dark:text-primary-light uppercase">
+          الـدّفتـــر الأزرق
+        </h1>
+        <p class="base-font mt-6 sm:mt-8 text-lg sm:text-xl xl:text-2xl text-center sm:text-right leading-none text-gray-400">
+          صدرت صفحة الدفتر الأزرق سنة 2021، بعد أكثر من عشر سنوات من الكتابة في السينما وفي الأعمال السينمائيّةِ.
+          وكان الغرضُ منها، المساهمة في إثراء المدوّنة النقديّةِ العربيّةِ بمحاولاتٍ جادّةٍ لفهمِ جماليّات الأعمال الفنيّة العالميّةِ والعربيّةِ استئناسا بالنظريات  النقديّة.
+          ولم تقتصر الصفحة على المقالات النقديّة الطويلة، وإنّما نشرت مراجعات قصيرة ومقترحاتٍ متنوّعةً لم تلبث أن غلبت عليها لما فرضه فيسبوك من أشكال النشر الممتنعة عن النّصوص الطويلةِ.
+          جاء موقع الدفتر الأزرق لجمع كلّ الكتابات السينمائيّة سواء الّتي نُشِرت على صفحة الفيسبوك أو الّتي نُشرت من قبلُ في الصّحافة، وفي النشريّات السينمائيّةِ، وفي المدوّنة الشخصيّةِ وحتّى في المجموعات الفيسبوكيّة الّتي تُعنى بالسينما...
+          وجاءَ لتوفير أشكالِ عرضٍ أكثر ملاءمةً لقراءةِ المقالاتِ والنصوص عامّةً بمختلفِ أغراضِها. الهدفُ أن تكون النّصوصُ تفاعليّةً، تشرح ما ينبغي شرحه من مصطلحاتٍ ومفاهيم، وتخفي ما يجب إخفاؤُه من حرقٍ، وتحيلُ إلى ما يستحسنُ الإحالةُ إليهِ من مراجع ونصوصٍ أخرى...
+          ولئن كان الهدفُ قريب المنالِ، فلا ضير من البدءِ بهذه النسخة التي تسمح بقراءةٍ مريحةٍ للنصوصِ، وخدمةِ بحثٍ في خاصيّاتِ الفلمِ الأساسيّةِ. والله وليّ التوفيق.
+        </p>
+        <p class="base-font text-center sm:text-left text-lg sm:text-xl xl:text-2xl text-gray-400 mt-4 sm:mt-0 ">
+          فاروق الفرشيشي
+        </p>
+      </div>
+  </section>
   </div>
 </template>
-
 <script>
 
-import StarRating from "@/components/reusable/StarRating.vue";
-
-export default {
-  name: "AboutUs",
-  components: {StarRating},
-
-  data() {
+import {defineComponent} from "vue";
+import feather from "feather-icons";
+export default defineComponent({
+  data: () => {
     return {
-      ratingDescriptions: [
-        { value: 0.5, text: "ملفّ فسادٍ على الأغلب." },
-        { value: 1, text: "عملٌ كسولٌ صاحبُه جمهورَهُ" },
-       { value: 1.5, text: "عملٌ فقيرٌ، تفوقُ هنّاتُه حسناتِه." },
-        { value: 2, text: "فشلَ رغم الجهدِ والمحاولة." },
-        { value: 2.5, text: "عملٌ متوسّط جدا. يملك حدّا مقبولا من الإتقان ولكنه يفتقر للطرافة." },
-        { value: 3, text: "عملٌ طريفٌ يصلح للمشاهدة." },
-        { value: 3.5, text: "عملٌ طريفٌ ومتقنٌ جدا، وله مكان غالبا في قوائم الأعمال الأفضل للسنة." },
-        { value: 4, text: "تحفة فنيّة مهمّة لها وقعها الذي لا يخفت. يمكنها أن تصبح فلمًا كلاسيكيّا." },
-        { value: 4.5, text: "أيقونة بارزة لا ينبغي على الإنسان أن يعيش ويموت دون أن يشاهدها." },
-        { value: 5, text: "عمل كامل الأوصاف، يأتي العقلَ فيخلّصه من الجفاف، ويبعث في العقل نورا، واختلاجا في الأطراف." },
-      ],
+      theme: '',
     };
   },
-};
+  created() {
+    this.theme = localStorage.getItem('theme') || 'light';
+  },
+  mounted() {
+    feather.replace();
+    this.theme = localStorage.getItem('theme') || 'light';
+  },
+  updated() {
+    feather.replace();
+  },
+  methods: {},
+})
 </script>
