@@ -26,7 +26,6 @@ export default {
               class="film-title-font  text-left text-3xl sm:text-4xl font-bold text-primary-dark dark:text-primary-light rtl:text-right">
         {{ singleArticleHeader.filmTitle }}
       </span>
-
     </div>
 
     <div class="flex">
@@ -48,8 +47,8 @@ export default {
 				></i>
 				<span
 					class="font-general-medium ml-2 leading-none text-primary-dark dark:text-primary-light"
-					v-if="singleArticleHeader.articleTags">{{ singleArticleHeader.articleTags.join(', ') }}</span
-				>
+					v-if="singleArticleHeader.articleTags">{{ singleArticleHeader.articleTags.join(', ') }}
+        </span>
 			</div>
 		</div>
 	</div>
