@@ -15,7 +15,7 @@ export default {
 	},
   methods: {
     generateShareUrl(platform) {
-      const articleId = this.articleInfo.id; // or wherever it's stored
+      const articleId = this.$route.params.id; // or wherever it's stored
       const shareUrl = encodeURIComponent(DAFTAR_BACK_BASE_URL + `/v1/articles/share/${articleId}`);
       const title = encodeURIComponent(this.articleInfo.title);
 
