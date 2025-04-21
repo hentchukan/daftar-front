@@ -47,7 +47,7 @@ const routes = [
 		},
 	},
 	{
-		path: '/articles/single-article/:articleId',
+		path: '/articles/single-article/:id',
 		name: 'Single Article',
 		// route level code-splitting
 		// this generates a separate chunk (articles.[hash].js) for this route

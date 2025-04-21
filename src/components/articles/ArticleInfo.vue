@@ -29,6 +29,10 @@ export default {
           return '#';
       }
     },
+
+    isNumber(part) {
+      return /^\d+$/.test(part); // Checks if part consists only of digits
+    },
 },
 };
 </script>
@@ -82,18 +86,27 @@ export default {
    </div>
    </div>
 
-	<div class="flex flex-col-reverse sm:flex-row gap-1 sm:gap-10 mt-14">
+	<div class="flex flex-col-reverse sm:flex-row gap-1 sm:gap-10 sm:mt-14">
 		<!-- Single article right section details -->
 		<div class="w-full sm:w-2/3 text-left rtf">
-			<p
-				class="article-title-font text-primary-dark dark:text-primary-light text-2xl font-bold mb-7">
-				{{ articleInfo.articleDetailsHeading }}
-			</p>
+			<div class="flex rtf">
+        <p
+                class="article-title-font text-primary-dark dark:text-primary-light text-2xl font-bold mb-7">
+          {{ articleInfo.articleDetailsHeading }}
+        </p>
+        <div class="flex mr-4 pt-2">
+          <i data-feather="clock" class="w-4 h-4 text-ternary-dark dark:text-ternary-light" />
+          <span  v-for="(part, index) in $formatDate(articleInfo.articleDate)" :key="index"
+                 class="film-meta-font ml-2 leading-none text-primary-dark dark:text-primary-light rtl:text-right"
+                 :dir="isNumber(part) ? 'ltr' : 'rtl'">
+                      {{ part }}
+        </span>
+        </div>
+      </div>
 			<p
 				v-for="articleDetail in articleInfo.articleDetails"
 				:key="articleDetail"
-				class="base-font mb-5 text-4xl text-ternary-dark dark:text-ternary-light" :style="{ fontSize: fontSize + 'px' }"
-			>
+				class="base-font mb-5 text-4xl text-ternary-dark dark:text-ternary-light" :style="{ fontSize: fontSize + 'px' }">
 				{{ articleDetail }}
 			</p>
 		</div>
@@ -101,9 +114,7 @@ export default {
 		<div class="w-full sm:w-1/3 text-left mb-10 sm:mb-0" :class="{ 'hidden sm:block': !showInfo }">
       <!-- Single Article film details -->
 			<div class="mb-7">
-				<p
-					class="film-info-header-font text-2xl text-secondary-dark dark:text-secondary-light mb-2 rtf"
-				>
+				<p class="film-info-header-font text-2xl text-secondary-dark dark:text-secondary-light mb-2 rtf">
 					{{ articleInfo.filmHeading }}
 				</p>
 				<ul class="leading-loose">
@@ -144,7 +155,7 @@ export default {
 				<p
 					class="film-info-font text-primary-dark dark:text-ternary-light rtf"
 				>
-					{{ articleInfo.tagsDetails.join(', ') }}
+					{{ articleInfo.tagsDetails.join('، ') }}
 				</p>
 			</div>
 
