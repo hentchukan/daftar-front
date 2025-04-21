@@ -1,5 +1,6 @@
 <script>
 import feather from 'feather-icons';
+import {DAFTAR_BACK_BASE_URL} from "../../../config";
 
 export default {
 	props: ['articleInfo'],
@@ -14,14 +15,15 @@ export default {
 	},
   methods: {
     generateShareUrl(platform) {
-      const url = encodeURIComponent(window.location.href);
-      const title = encodeURIComponent(this.articleInfo.title || 'Check this out');
+      const articleId = this.articleInfo.id; // or wherever it's stored
+      const shareUrl = encodeURIComponent(DAFTAR_BACK_BASE_URL + `/v1/articles/share/${articleId}`);
+      const title = encodeURIComponent(this.articleInfo.title);
 
       switch (platform) {
         case 'Twitter':
-          return `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+          return `https://twitter.com/intent/tweet?url=${shareUrl}&text=${title}`;
         case 'Facebook':
-          return `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+          return `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
         case 'Instagram':
           // Instagram does not support direct web sharing
           return 'https://www.instagram.com/';
