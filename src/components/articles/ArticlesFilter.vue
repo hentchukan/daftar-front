@@ -59,12 +59,10 @@ export default {
   },
   methods: {
     // Filter articles by title search
-    filterByTitle(titleSearch) {
+    filterByTitle() {
       // let article = new RegExp(this.searchArticle, 'i');
       // return this.articles.filter((el) => el.title.match(article));
-      console.log("Filter by Title " + titleSearch);
-      this.filters.filmTitle = this.titleSearch;
-      this.filter();
+      this.$emit('filterTitle', this.titleSearch)
     },
     fireValue($event) {
       this.$emit('filterYear', $event.year);
@@ -152,9 +150,10 @@ export default {
                 class="w-full border border-gray-300 dark:border-secondary-dark rounded-lg bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light pr-2"
                 @updateRange="$emit('filterRating', $event)"
         />
-        <div class="flex items-center w-full border border-gray-300 dark:border-secondary-dark rounded-lg bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light">
+        <div class="flex w-full border border-gray-300 dark:border-secondary-dark rounded-lg bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light
+        focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-300 dark:focus-within:ring-blue-800">
             <span
-                class="sm:flex  bg-secondary-light dark:bg-ternary-dark p-2.5 shadow-sm rounded-l-xl cursor-pointer"
+                class="w-12 sm:flex justify-center items-center bg-secondary-light dark:bg-ternary-dark p-2.5 shadow-sm rounded-l-xl cursor-pointer"
                 @click="filterByTitle">
               <i class="text-ternary-dark dark:text-ternary-light" data-feather="search"></i>
             </span>
@@ -164,7 +163,7 @@ export default {
                     placeholder="عنوانُ الفِلمِ"
                     aria-label="Name"
                     @keyup.enter="filterByTitle"
-                    class="rtf w-full sm:w-fit font-general-medium pl-3 pr-1 sm:px-4 py-3 border-hidden border-gray-200 dark:border-secondary-dark rounded-r-lg text-sm sm:text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
+                    class="rtf flex-grow sm:w-fit font-general-medium pl-3 pr-1 sm:px-4 py-3 border-none outline-none border-gray-200 dark:border-secondary-dark rounded-r-lg text-sm sm:text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
             />
        </div>
       </div>

@@ -45,11 +45,17 @@ export default {
       this.filters.rating = rating;
       this.filter();
     },
+    filterByTitle(title) {
+      console.log("Filter by Title "+title);
+      this.filters.filmTitle = title;
+      this.filter();
+    },
 		filter() {
 			console.log("Filter "+this.filters);
 			axios
 				.post(DAFTAR_BACK_BASE_URL + '/v1/articles/overviews', this.filters)
 				.then(response => {
+					this.articles = response.data;
 					this.articles = response.data;
 					console.log("Search result: " + this.articles.length + " items");
 			})
@@ -86,8 +92,8 @@ export default {
 					@filterYear="this.filterByYear($event)" 
 					@filterCountry="this.filterByCountry($event)"
         @filterDirectors="this.filterByDirector($event)"
-        @filterRating="this.filterByRating($event)"/>
-
+        @filterRating="this.filterByRating($event)"
+        @filterTitle="this.filterByTitle($event)"/>
 
 		<!-- Articles grid -->
 		<div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-4 mt-6 gap-1 sm:gap-3">
