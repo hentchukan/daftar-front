@@ -5,17 +5,11 @@ export default {
 </script>
 
 <template>
-	<div class="grid grid-cols-1 sm:grid-cols-1 sm:gap-10 mt-12">
-		<div
-			class="mb-10 sm:mb-0"
-			v-for="articleImage in articleImages"
-			:key="articleImage"
-		>
+	<div class="w-full flex justify-center mt-12 mb-10 sm:mb-0">
 			<img
-				:src="articleImage"
-				class="rounded-xl cursor-pointer shadow-lg sm:shadow-none"
-				alt="{{ articleImage }}"
+				:src="articleImages"
+				class="w-full h-auto rounded-xl cursor-pointer shadow-lg sm:shadow-none"
+				alt="مشكل في إظهار صورة الفلمِ"
 			/>
-		</div>
 	</div>
 </template>

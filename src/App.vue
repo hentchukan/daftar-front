@@ -27,11 +27,15 @@ export default {
 		<!-- App header -->
 		<AppHeader />
 		<!-- Render active component contents with vue transition -->
-		<transition name="fade" mode="out-in">
-			<router-view :theme="appTheme" />
-		</transition>
+    <template>
+      <router-view v-slot="{ Component, route }">
+        <transition name="fade" mode="out-in">
+          <component :theme="appTheme" :key="route.fullPath" />
+        </transition>
+      </router-view>
+    </template>
 
-		<!-- Scroll to top -->
+    <!-- Scroll to top -->
 		<back-to-top
 			visibleoffset="500"
 			right="30px"
