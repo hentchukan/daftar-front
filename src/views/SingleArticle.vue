@@ -53,6 +53,7 @@ export default {
 						url: 'https://facebook.com/bluenotemoviereviews',
 					}
 				],
+        articleTitle: ''
 			},
 			relatedArticles: {
 				relatedArticlesHeading: 'مقالات ذات صلة',
@@ -124,6 +125,7 @@ export default {
                 this.articleInfo.articleDetailsHeading = response.data.articleTitle;
                 this.articleInfo.articleDetails = response.data.text;
                 this.articleInfo.articleDate= response.data.date;
+                this.articleInfo.articleTitle = response.data.articleTitle;
                 this.articleImages = [response.data.cover];
               });
     }
