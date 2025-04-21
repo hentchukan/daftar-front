@@ -41,12 +41,6 @@ export default {
 						url: 'https://twitter.com/hentchukan',
 					},
 					{
-						id: 2,
-						name: 'Instagram',
-						icon: 'instagram',
-						url: 'https://instagram.com/hentchukan',
-					},
-					{
 						id: 3,
 						name: 'Facebook',
 						icon: 'facebook',
