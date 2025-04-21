@@ -90,12 +90,12 @@ export default {
 	<div class="flex flex-col-reverse sm:flex-row gap-1 sm:gap-10 sm:mt-14">
 		<!-- Single article right section details -->
 		<div class="w-full sm:w-2/3 text-left rtf">
-			<div class="flex rtf">
+			<div class="sm:flex flex-1 mb-7 rtf">
         <p
-                class="article-title-font text-primary-dark dark:text-primary-light text-2xl font-bold mb-7">
+                class="article-title-font text-primary-dark dark:text-primary-light text-2xl font-bold sm:mb-7 mb-3">
           {{ articleInfo.articleDetailsHeading }}
         </p>
-        <div class="flex mr-4 pt-2">
+        <div class="flex sm:mr-4 sm:pt-2">
           <i data-feather="clock" class="w-4 h-4 text-ternary-dark dark:text-ternary-light" />
           <span  v-for="(part, index) in $formatDate(articleInfo.articleDate)" :key="index"
                  class="film-meta-font ml-2 leading-none text-primary-dark dark:text-primary-light rtl:text-right"
