@@ -16,14 +16,15 @@ export default {
   methods: {
     generateShareUrl(platform) {
       const articleId = this.$route.params.id; // or wherever it's stored
-      const shareUrl = encodeURIComponent(DAFTAR_BACK_BASE_URL + `/v1/articles/share/${articleId}`);
+      const twitterUrl = encodeURIComponent(URL + `/v1/articles/single-article/${articleId}`);
+      const facebookUrl = encodeURIComponent(DAFTAR_BACK_BASE_URL + `/v1/articles/share/${articleId}`);
       const title = encodeURIComponent(this.articleInfo.title);
 
       switch (platform) {
         case 'Twitter':
-          return `https://twitter.com/intent/tweet?url=${shareUrl}&text=${title}`;
+          return `https://twitter.com/intent/tweet?text=${title}%20${twitterUrl}`;
         case 'Facebook':
-          return `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
+          return `https://www.facebook.com/sharer/sharer.php?u=${facebookUrl}`;
         case 'Instagram':
           // Instagram does not support direct web sharing
           return 'https://www.instagram.com/';
