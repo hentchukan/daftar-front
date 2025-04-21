@@ -7,12 +7,6 @@ export default {
 		return {
 			socials: [
 				{
-					id: 1,
-					name: 'GitHub',
-					icon: 'github',
-					url: 'https://github.com/hentchukan',
-				},
-				{
 					id: 2,
 					name: 'Facebook',
 					icon: 'facebook',
