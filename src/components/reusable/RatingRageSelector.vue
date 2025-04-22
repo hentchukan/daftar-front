@@ -31,7 +31,7 @@ export default {
 </script>
 
 <template>
-  <div class="flex flex-nowrap items-center justify-end gap-3 rtf
+  <div class="flex flex-nowrap items-center justify-start gap-3 rtf
 focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-300 dark:focus-within:ring-blue-800">
     <label class="text-sm base-font text-primary-dark dark:text-ternary-light ">التقدير من</label>
     <select

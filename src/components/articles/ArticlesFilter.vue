@@ -129,10 +129,11 @@ export default {
             {{ option.label }}
           </option>
         </select>
-
       </div>
-      <!-- Search bar and icon -->
+
+      <!-- second line -->
       <div class="flex flex-col sm:flex-row gap-2 mb-2 mt-2 ">
+        <!-- By Director -->
         <select
                 class="rtf w-full base-font pr-8 px-6 py-1 border border-gray-200 dark:border-secondary-dark rounded-lg text-sm sm:text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
                 @change="$emit('filterDirectors', $event.target.value)">
@@ -144,12 +145,14 @@ export default {
               {{ option.name }}
             </option>
         </select>
+        <!-- By Rating -->
         <RatingRangeSelector
                 :from="ratingRange.from"
                 :to="ratingRange.to"
                 class="w-full border border-gray-300 dark:border-secondary-dark rounded-lg bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light pr-2"
                 @updateRange="$emit('filterRating', $event)"
         />
+        <!-- By Title -->
         <div class="flex w-full border border-gray-300 dark:border-secondary-dark rounded-lg bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light
         focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-300 dark:focus-within:ring-blue-800">
             <span
