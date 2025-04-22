@@ -128,7 +128,7 @@ export default {
 				/>
 
 				<!-- Small screen hamburger menu -->
-				<div class="sm:hidden">
+				<div class="sm:hidden relative">
 					<button
 						@click="isOpen = !isOpen"
 						type="button"
@@ -153,10 +153,11 @@ export default {
 						</svg>
 					</button>
 
-          <div v-if="isOpen" class="sm:hidden bg-white dark:bg-gray-800 p-4 shadow-lg">
-            <AppHeaderLinks :showModal="showModal" :isOpen="isOpen" />
-          </div>
-
+            <AppHeaderLinks
+                    v-if="isOpen"
+                    :isOpen="isOpen"
+                    :showModal="showModal"
+                    class="absolute top-full right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg z-50 transition-all" />
         </div>
 			</div>
 		</div>
