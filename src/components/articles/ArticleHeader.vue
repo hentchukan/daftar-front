@@ -8,7 +8,11 @@ export default {
 	updated() {
 		feather.replace();
 	},
-  methods: {}
+  methods: {
+    isNumber(part) {
+      return /^\d+$/.test(part); // Checks if part consists only of digits
+    }
+  }
 };
 </script>
 
@@ -19,16 +23,24 @@ export default {
     <div class="flex justify-stretch">
       <StarRating class="flex mr-4" :rating="singleArticleHeader.ratingDetails" />
       <span class="w-full film-title-font text-right text-4xl sm:text-5xl font-bold text-primary-dark dark:text-primary-light rtl:text-right">
-        {{ singleArticleHeader.filmTitle }}
+        {{ singleArticleHeader.articleTitle }}
       </span>
     </div>
 
-    <div class="flex rtf mt-2 gap-2">
+<!--    <div class="flex rtf mt-2 gap-2">
       <i data-feather="tag" class="w-4 h-4 text-ternary-dark dark:text-ternary-light" />
       <span
         class="font-general-medium text-right ml-2 leading-none text-primary-dark dark:text-primary-light"
         v-if="singleArticleHeader.articleTags">{{ singleArticleHeader.articleTags.join('، ') }}
       </span>
+    </div>-->
+    <div class="flex rtf sm:mr-4 sm:pt-2">
+      <i data-feather="clock" class="w-4 h-4 text-ternary-dark dark:text-ternary-light" />
+      <span  v-for="(part, index) in $formatDate(singleArticleHeader.articleDate)" :key="index"
+             class="film-meta-font ml-2 leading-none text-primary-dark dark:text-primary-light rtl:text-right"
+             :dir="isNumber(part) ? 'ltr' : 'rtl'">
+                      {{ part }}
+        </span>
     </div>
 
 	</div>

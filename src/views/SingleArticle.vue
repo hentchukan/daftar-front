@@ -92,24 +92,35 @@ export default {
               .get(DAFTAR_BACK_BASE_URL + `/v1/articles/${id}`)
               .then(response => {
                 this.singleArticleHeader = {
-                  filmTitle: response.data.filmInfos.title[0],
-                  articleTags: response.data.tags.filter(tag => tag.type === 'Genre')
-                          .map(tag => tag.label),
+                  articleTitle: response.data.articleTitle,
+                  articleDate: response.data.date,
+                  /*articleTags: response.data.tags.filter(tag => tag.type === 'Genre')
+                          .map(tag => tag.label),*/
                   ratingDetails: response.data.rating
                 };
                 this.articleInfo.filmInfos = [
                   {
                     id: 1,
+                    title: 'الْعُنْوَانُ',
+                    details: response.data.filmInfos.title[0]
+                  },
+                  {
+                    id: 2,
+                    title: 'الْعُنْوَانُ الأَصْلِيُّ',
+                    details: response.data.filmInfos.title[1],
+                  },
+                  {
+                    id: 3,
                     title: 'الْمُخْرِجُ',
                     details: response.data.filmInfos.directors[0],
                   },
                   {
-                    id: 2,
+                    id: 4,
                     title: 'السَّنَةُ',
                     details: response.data.filmInfos.year,
                   },
                   {
-                    id: 3,
+                    id: 5,
                     title: 'الْبُطُولَةُ',
                     details: response.data.filmInfos.stars?.join('، ') ?? '',
                   }
