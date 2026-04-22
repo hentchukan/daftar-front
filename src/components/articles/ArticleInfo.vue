@@ -90,7 +90,7 @@ export default {
 	<div class="flex flex-col-reverse sm:flex-row gap-1 sm:gap-10 sm:mt-14">
 		<!-- Single article right section details -->
 		<div class="w-full sm:w-2/3 text-left rtf">
-			<div class="sm:flex flex-1 mb-7 rtf">
+<!--			<div class="sm:flex flex-1 mb-7 rtf">
         <p
                 class="article-title-font text-primary-dark dark:text-primary-light text-2xl font-bold sm:mb-7 mb-3">
           {{ articleInfo.articleDetailsHeading }}
@@ -103,7 +103,7 @@ export default {
                       {{ part }}
         </span>
         </div>
-      </div>
+      </div>-->
 			<p
 				v-for="articleDetail in articleInfo.articleDetails"
 				:key="articleDetail"
