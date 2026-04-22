@@ -12,7 +12,7 @@ import RatingRangeSelector from "@/components/reusable/RatingRageSelector.vue";
 export default {
   components: {RatingRangeSelector, Datepicker},
   setup() {
-    const searchYear = ref(new Date().getFullYear());
+    const searchYear = ref();
     const selectDate = () => {
       this.fireValue(searchYear);
     }
@@ -91,7 +91,7 @@ export default {
         <!-- Year -->
         <Datepicker
                 class="rtf "
-                :input-class-name="'pr-8 py-2 border border-gray-200 dark:border-secondary-dark rounded-lg text-sm sm:text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light'"
+                :input-class-name="'articles-filter-year-input font-general-medium pr-8 py-2 border border-gray-200 dark:border-secondary-dark rounded-lg text-sm sm:text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light'"
                 v-model="searchYear"
                 autoApply
                 placeholder="اِختر العام"
@@ -166,7 +166,7 @@ export default {
                     placeholder="عنوانُ الفِلمِ"
                     aria-label="Name"
                     @keyup.enter="filterByTitle"
-                    class="rtf flex-grow sm:w-fit font-general-medium pl-3 pr-1 sm:px-4 py-3 border-none outline-none border-gray-200 dark:border-secondary-dark rounded-r-lg text-sm sm:text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
+                    class="articles-filter-title-input rtf flex-grow sm:w-fit font-general-medium pl-3 pr-1 sm:px-4 py-3 border-none outline-none border-gray-200 dark:border-secondary-dark rounded-r-lg text-sm sm:text-md bg-secondary-light dark:bg-ternary-dark text-primary-dark dark:text-ternary-light"
             />
        </div>
       </div>
@@ -179,5 +179,12 @@ export default {
   height: 20px;
   width: auto;
   margin-right: 5px;
+}
+
+:deep(.articles-filter-year-input::placeholder),
+.articles-filter-title-input::placeholder {
+  color: #000;
+  opacity: 1;
+  font-family: inherit;
 }
 </style>
